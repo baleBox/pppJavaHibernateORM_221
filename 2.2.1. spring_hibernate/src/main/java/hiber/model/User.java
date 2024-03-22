@@ -18,19 +18,23 @@ public class User {
 
     @Column(name = "email")
     private String email;
-    @OneToOne(cascade=CascadeType.ALL)
+
+    //@MapsId
+    //@OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
+
     private Car car;
 
 
-    public User(String firstName, String lastName, String email,Car car) {
+    public User(String firstName, String lastName, String email, Car car) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.car = car;
     }
 
-    public User(){
+    public User() {
 
     }
 
